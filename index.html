@@ -10,6 +10,37 @@
     * {
       box-sizing: border-box;
     }
+    
+.social-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 45px;
+  padding: 20px 18px;
+  border-top: 1px solid #ded5e2;
+}
+
+.social-title {
+  margin: 0 0 5px;
+  color: #82758b;
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-family: "DM Sans", sans-serif;
+}
+
+.social-links a {
+  color: #5d5668;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 0.3px;
+  transition: color 0.2s ease;
+}
+
+.social-links a:hover {
+  color: #987bb0;
+}
+
 
     body {
       margin: 0;
@@ -193,43 +224,55 @@
 
     <div class="brand">
       <span class="brand-icon"></span>
-      <h2 class="brand-name">Haritha N.</h2>
+      <h2 class="brand-name">Haritha <br> Nagampoozhy</h2>
     </div>
 
 <nav class="nav-links">
   <a href="index.html" class="active">Home</a>
   <a href="research.html">Research</a>
-  <a href="notes.html">Notes</a>
+<!--  <a href="notes.html">Notes</a> -->
   <a href="publications.html">Publications</a>
   <a href="teaching.html">Teaching</a>
-  <a href="cv.html">CV</a>
-  <a href="about.html">About</a>
+ <!-- <a href="cv.html">CV</a>
+  <a href="about.html">About</a> -->
 </nav>
 
 
-    <div class="sidebar-quote">
+    
+<div class="social-links">
+  <p class="social-title">CONNECT</p>
+
+  <a href="https://scholar.google.com/" target="_blank" rel="noopener noreferrer">Google Scholar ↗</a>
+  <a href="https://orcid.org/" target="_blank" rel="noopener noreferrer">ORCID ↗</a>
+  <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+  <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+  <a href="mailto:your-email@example.com">Email ↗</a>
+</div>
+
+   <!-- <div class="sidebar-quote">
       “Better questions,<br>
       deeper journeys.”
-    </div>
+    </div> -->
 
-    <div class="social-links">
+   <!-- <div class="social-links">
       <a href="mailto:your-email@example.com"
-         aria-label="Email">✉ Email</a>
-      <a href="https://github.com/yourusername"
-         aria-label="GitHub">GitHub ↗</a>
-    </div>
+         aria-label="Email">✉ Email<br>
+      </a>
+     <!-- <a href="https://github.com/yourusername"
+         aria-label="GitHub">GitHub ↗</a> 
+    </div> -->
 
   </aside>
 
   <main>
-    <p style="letter-spacing: 3px;">WELCOME TO MY ACADEMIC SPACE</p>
+    <!--<p style="letter-spacing: 3px;">WELCOME TO MY ACADEMIC SPACE</p>
     <h1>Mathematics, ideas,<br>and the questions in between.</h1>
     <p>
       I am a mathematics PhD student interested in
       algebraic topology and representation theory.
       This is where I share my research, mathematical
       notes, and things I am curious about.
-    </p>
+    </p> -->
   </main>
 
 </body>
