@@ -2,6 +2,7 @@
 
   
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,13 +11,11 @@
 
   <title>Research | Haritha Nagampoozhy</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
   <style>
-    .sidebar,
-.sidebar a,
-.brand-name,
-.sidebar-quote {
-    font-family: Georgia, "Times New Roman", serif;
-}
     * {
       box-sizing: border-box;
     }
@@ -25,31 +24,39 @@
       margin: 0;
       background: #fbf8f2;
       color: #29263a;
-      font-family: Georgia, "Times New Roman", serif;
+      font-family: "DM Sans", sans-serif;
+      font-size: 15px;
+      line-height: 1.8;
     }
 
-    /* SIDEBAR */
+    /* Sidebar */
     .sidebar {
-    width: 235px;
-    padding: 36px 22px 24px;
-    box-sizing: border-box;
-}
+      width: 235px;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding: 38px 22px;
+      background: #f0eaf1;
+      border-right: 1px solid #e6dfe8;
+      overflow-y: auto;
+    }
 
-    /* NAME */
     .brand {
-      text-align: center;
+      text-align: right;
       margin-bottom: 65px;
+      padding-right: 8px;
     }
 
     .brand-name {
-    font-size: 19px;
-    letter-spacing: 1px;
-    line-height: 1.2;
-    text-transform: uppercase;
-    font-weight: normal;
-}
+      font-family: "Playfair Display", serif;
+      font-size: 19px;
+      line-height: 1.05;
+      letter-spacing: 1.5px;
+      font-weight: normal;
+      margin: 0;
+    }
 
-    /* NAVIGATION: NO ICONS */
     .nav-links {
       display: flex;
       flex-direction: column;
@@ -57,23 +64,19 @@
     }
 
     .nav-links a {
-      display: flex;
-      align-items: center;
-      padding: 12px 13px;
+      display: block;
+      padding: 13px 18px;
       color: #393449;
       text-decoration: none;
       font-size: 15px;
       letter-spacing: 0.5px;
       border-radius: 9px;
-      transition: background 0.25s ease,
-                  color 0.25s ease,
-                  transform 0.25s ease;
+      transition: background 0.25s ease, color 0.25s ease;
     }
 
     .nav-links a:hover {
       background: #e4dbe9;
       color: #654e7d;
-      transform: translateX(3px);
     }
 
     .nav-links a.active {
@@ -81,217 +84,168 @@
       color: #4d3b63;
     }
 
-    /* QUOTE */
-    .sidebar-quote {
-      margin-top: auto;
-      margin-bottom: 35px;
-      padding: 0 10px;
-      color: #79678a;
-      font-size: 14px;
-      line-height: 1.9;
-      font-style: italic;
-      text-align: center;
-    }
-
-    /* SOCIAL LINKS */
+    /* Social links */
     .social-links {
       display: flex;
-      justify-content: center;
-      gap: 25px;
-      padding: 15px 0 10px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+      margin-top: 45px;
+      padding: 20px 18px;
+      border-top: 1px solid #ded5e2;
+    }
+
+    .social-title {
+      margin: 0 0 5px;
+      color: #82758b;
+      font-size: 10px;
+      letter-spacing: 2px;
     }
 
     .social-links a {
-      color: #4b425d;
+      color: #5d5668;
       text-decoration: none;
       font-size: 13px;
+      letter-spacing: 0.3px;
       transition: color 0.2s ease;
     }
 
     .social-links a:hover {
-      color: #9679aa;
+      color: #987bb0;
     }
 
-    /* MAIN CONTENT */
-    main {
+    /* Main content */
+    .main-content {
       margin-left: 235px;
-      padding: 65px 55px 70px;
+      padding: 75px 9%;
       max-width: 1200px;
     }
 
     .eyebrow {
-      font-size: 12px;
+      color: #8d789c;
+      font-size: 11px;
       letter-spacing: 3px;
-      color: #79678a;
       text-transform: uppercase;
-      margin-bottom: 18px;
+      margin-bottom: 14px;
     }
 
-    main h1 {
-      font-size: clamp(36px, 5vw, 58px);
-      font-weight: normal;
-      line-height: 1.25;
+    h1, h2, h3 {
+      font-family: "Playfair Display", serif;
+      font-weight: 400;
+    }
+
+    h1 {
+      font-size: clamp(38px, 5vw, 52px);
+      line-height: 1.2;
       margin: 0 0 22px;
     }
 
-    main p {
-      max-width: 650px;
+    .intro {
+      max-width: 720px;
       font-size: 16px;
-      line-height: 1.9;
-      color: #625c69;
+      color: #5d5866;
+      margin-bottom: 55px;
     }
 
-    /* SECTION HEADINGS */
-    .section-heading {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      margin: 55px 0 24px;
+    .research-section {
+      max-width: 760px;
+      margin-bottom: 42px;
     }
 
-    .section-heading h2 {
-      font-size: 27px;
-      font-weight: normal;
-      margin: 0;
-    }
-
-    .section-line {
-      flex: 1;
-      height: 1px;
-      background: #e6dfe8;
-    }
-
-    /* RESEARCH INTERESTS */
-    .research-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .research-card {
-      padding: 25px 24px;
-      background: #fffdf9;
-      border: 1px solid #e9e1e9;
-      border-radius: 10px;
-      transition: border-color 0.25s ease,
-                  transform 0.25s ease;
-    }
-
-    .research-card:hover {
-      border-color: #cbbbd6;
-      transform: translateY(-3px);
-    }
-
-    .card-label {
-      color: #8b70a0;
-      font-size: 11px;
-      letter-spacing: 2px;
-      margin: 0 0 12px !important;
-    }
-
-    .research-card h3 {
-      font-size: 22px;
-      font-weight: normal;
-      line-height: 1.4;
+    .research-section h2 {
+      font-size: 25px;
+      line-height: 1.35;
       margin: 0 0 12px;
+      color: #493d58;
     }
 
-    .research-card p {
-      font-size: 14px;
-      line-height: 1.85;
-      margin: 0;
+    .research-section p {
+      margin: 0 0 15px;
+      color: #514c59;
     }
 
-    /* CURRENT RESEARCH */
-    .current-research {
-      margin-top: 45px;
-      padding: 30px;
-      background: #f0eaf1;
-      border-radius: 10px;
-      border-left: 3px solid #8b70a0;
+    .topic-list {
+      list-style: none;
+      padding: 0;
+      margin: 18px 0 0;
     }
 
-    .current-research h2 {
-      font-size: 26px;
-      font-weight: normal;
-      margin: 0 0 14px;
+    .topic-list li {
+      padding: 9px 0;
+      border-bottom: 1px solid #e9e2e8;
+      color: #514c59;
     }
 
-    .current-research p {
-      margin: 0;
-      font-size: 15px;
+    .topic-list li::before {
+      content: "—";
+      color: #9b83ac;
+      margin-right: 12px;
     }
 
-    /* CLOSING QUOTE */
-    .research-quote {
-      margin-top: 45px;
-      padding-left: 20px;
-      border-left: 2px solid #b5a2c4;
-      color: #79678a;
-      font-size: 18px;
-      font-style: italic;
-      line-height: 1.9;
-      max-width: 620px;
-    }
-
-    /* FOOTER */
-    .footer {
-      margin-top: 55px;
-      padding-top: 20px;
+    .divider {
+      border: 0;
       border-top: 1px solid #e6dfe8;
-      color: #827b86;
-      font-size: 12px;
+      margin: 42px 0;
+      max-width: 760px;
     }
 
-    /* SMALL SCREENS */
-    @media (max-width: 760px) {
+    footer {
+      margin-top: 65px;
+      padding-top: 18px;
+      border-top: 1px solid #e6dfe8;
+      color: #827b88;
+      font-size: 12px;
+      max-width: 760px;
+    }
+
+    /* Mobile layout */
+    @media (max-width: 700px) {
       .sidebar {
         position: relative;
         width: 100%;
         height: auto;
-        padding: 22px 16px;
+        padding: 22px 20px;
+        border-right: none;
+        border-bottom: 1px solid #e6dfe8;
       }
 
       .brand {
-        margin-bottom: 22px;
-      }
-
-      .brand-name {
-        font-size: 17px;
+        text-align: left;
+        margin-bottom: 20px;
+        padding-right: 0;
       }
 
       .nav-links {
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: center;
-        gap: 5px;
+        gap: 4px;
       }
 
       .nav-links a {
-        padding: 9px 10px;
+        padding: 8px 11px;
         font-size: 13px;
       }
 
-      .sidebar-quote,
       .social-links {
-        display: none;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px 18px;
+        margin-top: 18px;
+        padding: 14px 0 0;
       }
 
-      main {
+      .social-title {
+        width: 100%;
+      }
+
+      .main-content {
         margin-left: 0;
-        padding: 35px 22px;
+        padding: 42px 24px;
       }
 
-      .research-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .section-heading h2 {
-        font-size: 23px;
-      }
-
-      .current-research {
-        padding: 23px;
+      h1 {
+        font-size: 38px;
       }
     }
   </style>
@@ -299,11 +253,14 @@
 
 <body>
 
-  <!-- SIDEBAR -->
+  <!-- Sidebar -->
   <aside class="sidebar">
 
     <div class="brand">
-      <h2 class="brand-name">Haritha Nagampoozhy</h2>
+      <h2 class="brand-name">
+        Haritha<br>
+        Nagampoozhy
+      </h2>
     </div>
 
     <nav class="nav-links">
@@ -316,107 +273,85 @@
       <a href="about.html">About</a>
     </nav>
 
-    <p class="sidebar-quote">
-      Better questions,<br>
-      deeper journeys.
-    </p>
-
     <div class="social-links">
-      <a href="mailto:harithnag@gmail.com">Email</a>
-      <a href="https://github.com/harithnag"
-         target="_blank"
-         rel="noopener noreferrer">GitHub</a>
+      <p class="social-title">CONNECT</p>
+      <a href="https://scholar.google.com/" target="_blank" rel="noopener noreferrer">Google Scholar ↗</a>
+      <a href="https://orcid.org/" target="_blank" rel="noopener noreferrer">ORCID ↗</a>
+      <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+      <a href="mailto:your-email@example.com">Email ↗</a>
     </div>
 
   </aside>
 
-  <!-- RESEARCH PAGE -->
-  <main>
+  <!-- Main research page -->
+  <main class="main-content">
 
-    <p class="eyebrow">Questions · Ideas · Exploration</p>
+    <p class="eyebrow">Mathematics · Research</p>
 
-    <h1>
-      Research<span style="color: #8b70a0;">.</span>
-    </h1>
+    <h1>Research</h1>
 
-    <p>
-      I am a mathematics PhD student interested in algebraic topology
-      and representation theory. My work explores connections between
-      algebraic structures, cohomology, and characteristic classes.
-      This page introduces the mathematical areas that shape my research.
+    <p class="intro">
+      My research interests lie at the intersection of representation
+      theory, topology, and characteristic classes. I am interested in
+      understanding how algebraic structures interact with topological
+      invariants, particularly in the setting of finite groups.
     </p>
 
-    <!-- RESEARCH INTERESTS -->
-    <section>
+    <section class="research-section">
+      <h2>Research Interests</h2>
 
-      <div class="section-heading">
-        <h2>Research interests</h2>
-        <div class="section-line"></div>
-      </div>
+      <p>
+        My current interests focus on the relationships between
+        representations of finite groups, cohomology, and characteristic
+        classes. These subjects provide different ways to study the
+        structure of groups and the geometric information encoded by
+        their representations.
+      </p>
 
-      <div class="research-grid">
-
-        <article class="research-card">
-          <p class="card-label">01 · ALGEBRA</p>
-          <h3>Representation Theory</h3>
-          <p>
-            The study of algebraic structures through their actions
-            on vector spaces, with particular interest in representations
-            of finite groups.
-          </p>
-        </article>
-
-        <article class="research-card">
-          <p class="card-label">02 · TOPOLOGY</p>
-          <h3>Algebraic Topology</h3>
-          <p>
-            The use of algebraic tools to study topological spaces,
-            spaces of geometric interest, and the invariants that
-            reveal their underlying structure.
-          </p>
-        </article>
-
-        <article class="research-card">
-          <p class="card-label">03 · CHARACTERISTIC CLASSES</p>
-          <h3>Characteristic Classes</h3>
-          <p>
-            Cohomological invariants associated with vector bundles,
-            and their role in understanding geometric and algebraic
-            constructions.
-          </p>
-        </article>
-
-        <article class="research-card">
-          <p class="card-label">04 · CONNECTIONS</p>
-          <h3>Finite Groups and Cohomology</h3>
-          <p>
-            Exploring how representations of finite groups interact
-            with group cohomology, characteristic classes, and
-            transfer-like constructions.
-          </p>
-        </article>
-
-      </div>
+      <ul class="topic-list">
+        <li>Representation theory of finite groups</li>
+        <li>Algebraic and geometric topology</li>
+        <li>Characteristic classes</li>
+        <li>Group cohomology</li>
+      </ul>
     </section>
 
-    <!-- CURRENT RESEARCH -->
-    <section class="current-research">
-      <h2>Current research</h2>
+    <hr class="divider">
+
+    <section class="research-section">
+      <h2>Current Research</h2>
+
       <p>
-        My current work concerns characteristic classes associated
-        with representations and constructions involving finite groups.
-        I am interested in understanding how these classes behave
-        under different algebraic and cohomological operations.
+        My work explores characteristic classes associated with
+        representations and constructions involving finite groups.
+        I am particularly interested in how cohomological operations
+        and representation-theoretic constructions influence the
+        resulting characteristic classes.
+      </p>
+
+      <p>
+        This section can be expanded to describe your specific research
+        problem, the questions you are investigating, and the methods
+        you use.
       </p>
     </section>
 
-    <div class="research-quote">
-      Exploring the connections between algebraic structures
-      and the geometric information they carry.
-    </div>
+    <hr class="divider">
 
-    <footer class="footer">
-      © Haritha Nagampoozhy · Academic website
+    <section class="research-section">
+      <h2>Research Background</h2>
+
+      <p>
+        My interests bring together algebraic methods and topological
+        ideas. I aim to understand how representations give rise to
+        characteristic classes and how these classes behave under
+        natural constructions and maps between groups.
+      </p>
+    </section>
+
+    <footer>
+      © Haritha Nagampoozhy
     </footer>
 
   </main>
