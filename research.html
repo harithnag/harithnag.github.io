@@ -4,13 +4,410 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Research | Haritha Nagampoozhy</title>
-</head>
-<body>
-  <h1>Research</h1>
-  <p>Welcome to my research page.</p>
-  <p>My research interests and current work will appear here.</p>
 
-  <a href="index.html">Back to Home</a>
+  <title>Research | Haritha Nagampoozhy</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --lavender: #e8e1f0;
+      --lavender-dark: #8c789f;
+      --sage: #dce5d9;
+      --cream: #faf8f4;
+      --ink: #39343e;
+      --muted: #827b86;
+      --line: #e9e3e9;
+      --white: #fffefd;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      line-height: 1.7;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      position: fixed;
+      inset: 0 auto 0 0;
+      width: 235px;
+      padding: 42px 25px;
+      background: var(--lavender);
+      display: flex;
+      flex-direction: column;
+      z-index: 10;
+    }
+
+    .brand-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 25px;
+      line-height: 1.3;
+      font-weight: 500;
+      margin-bottom: 45px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .nav-links a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 14px;
+      transition: background 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      background: rgba(255, 255, 255, 0.55);
+    }
+
+    .nav-links a.active {
+      background: var(--white);
+      font-weight: 600;
+    }
+
+    .nav-icon {
+      width: 20px;
+      text-align: center;
+      color: var(--lavender-dark);
+      font-size: 17px;
+    }
+
+    .sidebar-note {
+      margin-top: auto;
+      padding-top: 25px;
+      border-top: 1px solid rgba(100, 80, 115, 0.18);
+      color: var(--muted);
+      font-family: 'Playfair Display', serif;
+      font-size: 14px;
+      font-style: italic;
+    }
+
+    /* Main page */
+    .main {
+      margin-left: 235px;
+      padding: 65px 8%;
+      max-width: 1250px;
+    }
+
+    .eyebrow {
+      color: var(--lavender-dark);
+      font-size: 11px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 13px;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 500;
+    }
+
+    h1 {
+      font-size: clamp(38px, 5vw, 53px);
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+
+    .intro {
+      max-width: 680px;
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 48px;
+    }
+
+    /* Research interests */
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 23px;
+    }
+
+    .section-heading h2 {
+      font-size: 25px;
+      white-space: nowrap;
+    }
+
+    .heading-line {
+      height: 1px;
+      flex: 1;
+      background: var(--line);
+    }
+
+    .interest-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .interest-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 24px;
+      transition: border-color 0.2s ease,
+                  transform 0.2s ease;
+    }
+
+    .interest-card:hover {
+      border-color: #cbbbd9;
+      transform: translateY(-2px);
+    }
+
+    .interest-number {
+      color: var(--lavender-dark);
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      margin-bottom: 12px;
+    }
+
+    .interest-card h3 {
+      font-size: 21px;
+      line-height: 1.4;
+      margin-bottom: 10px;
+    }
+
+    .interest-card p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* Current work */
+    .current-work {
+      margin-top: 48px;
+      padding: 30px;
+      background: var(--sage);
+      border-radius: 14px;
+    }
+
+    .current-work h2 {
+      font-size: 25px;
+      margin-bottom: 12px;
+    }
+
+    .current-work p {
+      max-width: 700px;
+      font-size: 14px;
+      color: #505b4d;
+    }
+
+    .research-note {
+      margin-top: 45px;
+      padding-left: 20px;
+      border-left: 2px solid var(--lavender-dark);
+      color: var(--muted);
+      font-family: 'Playfair Display', serif;
+      font-size: 19px;
+      font-style: italic;
+    }
+
+    .footer {
+      margin-top: 55px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    /* Mobile layout */
+    @media (max-width: 760px) {
+      .sidebar {
+        position: relative;
+        width: 100%;
+        padding: 22px;
+      }
+
+      .brand-name {
+        margin-bottom: 20px;
+        font-size: 23px;
+      }
+
+      .nav-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 5px;
+      }
+
+      .nav-links a {
+        padding: 8px 10px;
+        font-size: 12px;
+      }
+
+      .nav-icon {
+        display: none;
+      }
+
+      .sidebar-note {
+        display: none;
+      }
+
+      .main {
+        margin-left: 0;
+        padding: 40px 22px;
+      }
+
+      .interest-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .interest-card {
+        padding: 21px;
+      }
+
+      .current-work {
+        padding: 23px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Sidebar navigation -->
+  <aside class="sidebar">
+    <div class="brand">
+      <h2 class="brand-name">Haritha<br>Nagampoozhy</h2>
+    </div>
+
+    <nav class="nav-links">
+      <a href="index.html">
+        <span class="nav-icon">⌂</span> Home
+      </a>
+
+      <a href="research.html" class="active">
+        <span class="nav-icon">✳</span> Research
+      </a>
+
+      <a href="notes.html">
+        <span class="nav-icon">♧</span> Notes
+      </a>
+
+      <a href="publications.html">
+        <span class="nav-icon">▤</span> Publications
+      </a>
+
+      <a href="teaching.html">
+        <span class="nav-icon">⌑</span> Teaching
+      </a>
+
+      <a href="cv.html">
+        <span class="nav-icon">♙</span> CV
+      </a>
+
+      <a href="about.html">
+        <span class="nav-icon">❧</span> About
+      </a>
+    </nav>
+
+    <p class="sidebar-note">
+      Better questions,<br>deeper journeys.
+    </p>
+  </aside>
+
+  <!-- Main content -->
+  <main class="main">
+
+    <p class="eyebrow">Questions · Ideas · Exploration</p>
+
+    <h1>Research<span style="color: var(--lavender-dark);">.</span></h1>
+
+    <p class="intro">
+      My research interests lie in mathematics, particularly in the
+      connections between algebraic structures, topology, and geometry.
+      This page is a space to introduce the areas I work on and the
+      questions that guide my research.
+    </p>
+
+    <!-- Research interests -->
+    <section>
+      <div class="section-heading">
+        <h2>Research interests</h2>
+        <div class="heading-line"></div>
+      </div>
+
+      <div class="interest-grid">
+
+        <article class="interest-card">
+          <p class="interest-number">01 / ALGEBRA</p>
+          <h3>Representation Theory</h3>
+          <p>
+            Studying how algebraic structures can be understood through
+            their actions on vector spaces and the representations
+            they admit.
+          </p>
+        </article>
+
+        <article class="interest-card">
+          <p class="interest-number">02 / TOPOLOGY</p>
+          <h3>Algebraic Topology</h3>
+          <p>
+            Exploring algebraic invariants that capture topological
+            information and help distinguish mathematical spaces.
+          </p>
+        </article>
+
+        <article class="interest-card">
+          <p class="interest-number">03 / GEOMETRY</p>
+          <h3>Characteristic Classes</h3>
+          <p>
+            Investigating characteristic classes as tools for studying
+            vector bundles and the geometric information they encode.
+          </p>
+        </article>
+
+        <article class="interest-card">
+          <p class="interest-number">04 / CONNECTIONS</p>
+          <h3>Groups, Bundles &amp; Geometry</h3>
+          <p>
+            Interested in the relationships between group representations,
+            cohomology, vector bundles, and geometric constructions.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Current research -->
+    <section class="current-work">
+      <h2>Current work</h2>
+      <p>
+        My current work explores questions at the intersection of
+        representation theory and characteristic classes, with an
+        emphasis on constructions arising from finite groups and
+        their cohomology.
+      </p>
+    </section>
+
+    <p class="research-note">
+      Mathematics is a conversation between structures,
+      ideas, and the connections that emerge between them.
+    </p>
+
+    <footer class="footer">
+      © Haritha Nagampoozhy · Academic website
+    </footer>
+
+  </main>
+
 </body>
 </html>
+
